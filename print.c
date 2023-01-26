@@ -11,9 +11,16 @@ int _print_string(const char *str)
 	int count = 0;
 	int i = 0;
 
-	while (str[i])
-		count += _putchar(str[i++]);
-	
+	if (!str)
+	{
+		_print_string("(null)");
+	}
+	else
+	{
+		while (str[i])
+			count += _putchar(str[i++]);
+	}
+
 	return (count);
 }
 
