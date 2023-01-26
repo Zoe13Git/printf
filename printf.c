@@ -17,7 +17,7 @@ int _printf(const char *str, ...)
 	i = 0;
 
 	if (!str)
-		return (0);
+		return (-1);
 
 	while (str && str[i])
 	{
