@@ -13,7 +13,7 @@ int _print_string(const char *str)
 
 	if (!str)
 	{
-		/* _print_string("(null)"); */
+		 count += _print_string("(null)");
 	}
 	else
 	{

@@ -16,6 +16,9 @@ int _printf(const char *str, ...)
 
 	i = 0;
 
+	if (!str)
+		return (0);
+
 	while (str && str[i])
 	{
 		if (str[i] == '%')
