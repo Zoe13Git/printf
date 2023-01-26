@@ -11,9 +11,10 @@ int _print_string(const char *str)
 	int count = 0;
 	int i = 0;
 
+
 	if (!str)
 	{
-		 count += _print_string("(null)");
+		count += _print_string("(null)");
 	}
 	else
 	{
