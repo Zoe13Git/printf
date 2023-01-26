@@ -23,7 +23,7 @@ int _printf(const char *str, ...)
 			switch (str[i + 1])
 			{
 			case 'c':
-				count += _print_int(va_arg(ap, int));
+				count += _putchar(va_arg(ap, int));
 				break;
 			case 's':
 				count += _print_string(va_arg(ap, char*));
@@ -34,7 +34,7 @@ int _printf(const char *str, ...)
 			}
 			i += 2;
 		}
-		else 
+		else
 		{
 			count += _putchar(str[i++]);
 		}
