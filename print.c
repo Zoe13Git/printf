@@ -6,12 +6,15 @@
  * @str: string
  * Return: int
  */
-void _print_string(const char *str)
+int _print_string(const char *str)
 {
+	int count = 0;
 	int i = 0;
 
 	while (str[i])
-		_putchar(str[i++]);
+		count += _putchar(str[i++]);
+	
+	return (count);
 }
 
 /**
@@ -19,16 +22,20 @@ void _print_string(const char *str)
  * @num: int to print
  * Return: 0;
  */
-void _print_int(int num)
+int _print_int(int num)
 {
+	int count = 0;
+
 	if (num < 0)
 	{
-		_putchar('-');
+		count += _putchar('-');
 		num  = -num;
 	}
 
 	if (num / 10)
 		_print_int(num / 10);
 
-	_putchar(num % 10 + '0');
+	count += _putchar(num % 10 + '0');
+
+	return (count);
 }

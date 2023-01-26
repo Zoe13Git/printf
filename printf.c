@@ -6,11 +6,11 @@
  * @str: string
  * Return: -
  */
-
 int _printf(const char *str, ...)
 {
 	va_list ap;
 	int i;
+	int count = 0;
 
 	va_start(ap, str);
 
@@ -23,25 +23,24 @@ int _printf(const char *str, ...)
 			switch (str[i + 1])
 			{
 			case 'c':
-				_print_int(va_arg(ap, int));
+				count += _print_int(va_arg(ap, int));
 				break;
 			case 's':
-				_print_string(va_arg(ap, char*));
+				count += _print_string(va_arg(ap, char*));
 				break;
 			case '%':
-				_putchar('%');
+				count += _putchar('%');
 				break;
 			}
 			i += 2;
 		}
 		else 
 		{
-			_putchar(str[i++]);
-	
+			count += _putchar(str[i++]);
 		}
 	}
 	va_end(ap);
 
-	return (0);
+	return (count);
 }
 
