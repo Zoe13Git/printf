@@ -41,7 +41,8 @@ int _printf(const char *str, ...)
 				count += _putchar('%');
 					break;
 				default:
-				count += _putchar(str[i + 1]);
+					count += _putchar('%');
+					count += _putchar(str[i + 1]);
 					break;
 				}
 				i += 2;
