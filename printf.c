@@ -23,23 +23,27 @@ int _printf(const char *str, ...)
 	{
 		if (str[i] == '%')
 		{
-			if (!str[i + 1])
-				break;
-
-			switch (str[i + 1])
+			if (str[i + 1] == '\0')
 			{
-			case 'c':
-				count += _putchar(va_arg(ap, int));
-				break;
-			case 's':
-				count += _print_string(va_arg(ap, char*));
-				break;
-			default:
-				count += _putchar('%');
-				count += _putchar(str[i + 1]);
-				break;
+				return (-1);
 			}
-			i += 2;
+			else
+			{
+				switch (str[i + 1])
+				{
+				case 'c':
+					count += _putchar(va_arg(ap, int));
+					break;
+				case 's':
+					count += _print_string(va_arg(ap, char*));
+					break;
+				default:
+					count += _putchar('%');
+					count += _putchar(str[i + 1]);
+					break;
+				}
+				i += 2;
+			}
 		}
 		else
 		{
