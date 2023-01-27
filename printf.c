@@ -1,6 +1,4 @@
-#include <stdarg.h>
 #include "main.h"
-
 /**
  * _printf - printf function
  * @str: string
@@ -9,36 +7,30 @@
 int _printf(const char *str, ...)
 {
 	va_list ap;
-	int i;
-	int count = 0;
+	int i = 0, count = 0;
 
 	va_start(ap, str);
-
-	i = 0;
-
 	if (!str)
 		return (-1);
-
 	while (str && str[i])
 	{
 		if (str[i] == '%')
 		{
 			if (str[i + 1] == '\0')
-			{
-				return (-1);
+			{	return (-1);
 			}
 			else
 			{
 				switch (str[i + 1])
 				{
 				case 'c':
-				count += _putchar(va_arg(ap, int));
+					count += _putchar(va_arg(ap, int));
 					break;
 				case 's':
-				count += _print_string(va_arg(ap, char*));
+					count += _print_string(va_arg(ap, char*));
 					break;
 				case '%':
-				count += _putchar('%');
+					count += _putchar('%');
 					break;
 				default:
 					count += _putchar('%');
@@ -49,12 +41,10 @@ int _printf(const char *str, ...)
 			}
 		}
 		else
-		{
-			count += _putchar(str[i++]);
+		{ count += _putchar(str[i++]);
 		}
 	}
 	va_end(ap);
-
 	return (count);
 }
 
