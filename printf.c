@@ -32,14 +32,16 @@ int _printf(const char *str, ...)
 				switch (str[i + 1])
 				{
 				case 'c':
-					count += _putchar(va_arg(ap, int));
+				count += _putchar(va_arg(ap, int));
 					break;
 				case 's':
-					count += _print_string(va_arg(ap, char*));
+				count += _print_string(va_arg(ap, char*));
+					break;
+				case '%':
+				count += _putchar('%');
 					break;
 				default:
-					count += _putchar('%');
-					count += _putchar(str[i + 1]);
+				count += _putchar(str[i + 1]);
 					break;
 				}
 				i += 2;
