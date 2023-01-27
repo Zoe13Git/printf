@@ -23,6 +23,9 @@ int _printf(const char *str, ...)
 	{
 		if (str[i] == '%')
 		{
+			if (!str[i + 1])
+				break;
+
 			switch (str[i + 1])
 			{
 			case 'c':
