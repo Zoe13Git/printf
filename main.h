@@ -12,6 +12,8 @@ int _strlenc(const char *str);
 int _putchar(char c);
 int print_37(void);
 int _print_string(char *str);
+int print_dcm(va_list args);
+int print_int(va_list args);
 int _print_int(int num);
 
 #endif
