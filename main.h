@@ -10,6 +10,7 @@ int printf_string(va_list val);
 int _strlen(char *str);
 int _strlenc(const char *str);
 int _putchar(char c);
+int print_37(void);
 int _print_string(char *str);
 int _print_int(int num);
 
